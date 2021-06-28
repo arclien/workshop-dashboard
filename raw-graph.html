@@ -35,7 +35,7 @@ var myChart = echarts.init(dom);
 var app = {};
 
 var option;
-var memeber_count = 12;
+
 var data = {
     'Aaron':{
         first:[21.125, 49.4, 12.875, 9.7, 6, 15.3, 25.025, 34],
@@ -101,9 +101,12 @@ const sumArray = (array) => {
    return newArray;
 }
 
-data['summary'] = {
-    first: sumArray(Object.keys(data).map((key, index) => data[key].first)).map((el) => Math.floor(el/memeber_count)),
-    second: sumArray(Object.keys(data).map((key, index) => data[key].second)).map((el) => Math.floor(el/memeber_count)),
+
+const exist_count = Object.keys(data).map((key, index) => data[key].first).filter((el)=> el.length > 0).length;
+
+data['aggregataion'] = {
+    first: sumArray(Object.keys(data).map((key, index) => data[key].first)).map((el) => Math.floor(el/exist_count)),
+    second: sumArray(Object.keys(data).map((key, index) => data[key].second)).map((el) => Math.floor(el/exist_count)),
 };
 
 
