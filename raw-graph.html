@@ -1,0 +1,195 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=radar
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+var memeber_count = 12;
+var data = {
+    'Aaron':{
+        first:[21.125, 49.4, 12.875, 9.7, 6, 15.3, 25.025, 34],
+        second:[3.688, 18.25, 11.225, 19.75, 42.3, 17.825, 18.2, 15.075],
+    },
+    'Carole':{
+        first:[],
+        second:[],
+    },
+    'Charles':{
+        first:[],
+        second:[],
+    },
+    'Flynn':{
+        first:[],
+        second:[],
+    },
+    'Gavin':{
+        first:[],
+        second:[],
+    },
+    'Ian':{
+        first:[4.9333, 18.7, 10.2833, 17.25, 40.5666, 20.3166, 44.3, 27.2833],
+        second:[14.1, 31.175, 37.2, 20.237, 28.1, 14, 10.463, 2.75],
+    },
+    'Jason':{
+        first:[],
+        second:[],
+    },
+    'Masha':{
+        first:[],
+        second:[],
+    },
+    'Oliver':{
+        first:[],
+        second:[],
+    },
+    'Peter':{
+        first:[],
+        second:[],
+    },
+    'Sonny':{
+        first:[],
+        second:[],
+    },
+    'Theo':{
+        first:[],
+        second:[],
+    },
+}
+
+const sumArray = (array) => {
+   const newArray = [];
+   array.forEach(sub => {
+      sub.forEach((num, index) => {
+         if(newArray[index]){
+            newArray[index] += num;
+         }else{
+            newArray[index] = num;
+         }
+      });
+   });
+   return newArray;
+}
+
+data['summary'] = {
+    first: sumArray(Object.keys(data).map((key, index) => data[key].first)).map((el) => Math.floor(el/memeber_count)),
+    second: sumArray(Object.keys(data).map((key, index) => data[key].second)).map((el) => Math.floor(el/memeber_count)),
+};
+
+
+option = {
+    color: [ '#FFD300', '#ff8e8e'],
+    title: (function (){
+        return Object.keys(data).map((key, index) => {
+            return {
+                subtext: key,
+                left: ((index % 5) * 20) + 10 + '%', 
+                top:  (Math.floor(index / 5) * 30 + 27) + '%', 
+                textAlign: 'center'
+            };
+        });
+    })(),
+    legend: {
+        data: ['욕구강점', '행동판단강점']
+    },
+    radar: (function (){
+        return Object.keys(data).map((key, index) => {
+            return {
+                shape: 'circle',
+                indicator: [
+                    { name: '외교', max: 50},
+                    { name: '동기부여', max: 50},
+                    { name: '창조', max: 50},
+                    { name: '탐구', max: 50},
+                    { name: '평가', max: 50},
+                    { name: '조정', max: 50},
+                    { name: '완성', max: 50},
+                    { name: '추진', max: 50},
+                ],
+                name: {
+                    textStyle: {
+                        color: '#fff',
+                        backgroundColor: '#666',
+                        borderRadius: 3,
+                        padding: [3, 5]
+                    }
+                },
+                splitArea:{
+                    show:false,
+                },
+                startAngle:115,
+                radius: 120,
+                center: [
+                    ((index % 5) * 20) + 10 + '%', 
+                    (Math.floor(index / 5) * 30 + 15) + '%', 
+                ], 
+            };
+        });
+    })(),
+    
+    series: (function (){
+        return Object.keys(data).map((key, index) => {
+            return {
+                name: key,
+                type: 'radar',
+                symbol: 'none',
+                radarIndex: index,
+                data: [
+                    {
+                        value: data[key].first,
+                        name: '욕구강점',
+                        lineStyle: {
+                            width: 4
+                        }
+                    },
+                    {
+                        value: data[key].second,
+                        name: '행동판단강점',
+                        lineStyle: {
+                            type: 'dashed'
+                        },
+                    }
+                ]
+            };
+        });
+    })(),
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
