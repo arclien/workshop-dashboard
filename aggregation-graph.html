@@ -102,7 +102,7 @@ const sumArray = (array) => {
 
 const exist_count = Object.keys(data).map((key, index) => data[key].first).filter((el)=> el.length > 0).length;
 
-data['aggregataion'] = {
+data['aggregation'] = {
     first: sumArray(Object.keys(data).map((key, index) => data[key].first)).map((el) => Math.floor(el / exist_count)),
     second: sumArray(Object.keys(data).map((key, index) => data[key].second)).map((el) => Math.floor(el / exist_count)),
 };
@@ -203,7 +203,7 @@ option = {
                     return {
                         value: data[key].first,
                         name: key,
-                        areaStyle: key === 'aggregataion' ? {
+                        areaStyle: key === 'aggregation' ? {
                             color: new echarts.graphic.RadialGradient(0, 1, 1, [
                                 {
                                     color: 'rgba(255, 145, 124, 1)',
@@ -244,7 +244,7 @@ option = {
                     return {
                         value: data[key].second,
                         name: key,
-                        areaStyle: key === 'aggregataion' ? {
+                        areaStyle: key === 'aggregation' ? {
                             color: new echarts.graphic.RadialGradient(0, 1, 1, [
                                 {
                                     color: 'rgba(255, 145, 124, 1)',

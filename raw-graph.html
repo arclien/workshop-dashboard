@@ -123,7 +123,7 @@ const sumArray = (array) => {
 
 const exist_count = Object.keys(data).map((key, index) => data[key].first).filter((el)=> el.length > 0).length;
 
-data['aggregataion'] = {
+data['aggregation'] = {
     first: sumArray(Object.keys(data).map((key, index) => data[key].first)).map((el) => Math.floor(el/exist_count)),
     second: sumArray(Object.keys(data).map((key, index) => data[key].second)).map((el) => Math.floor(el/exist_count)),
 };
