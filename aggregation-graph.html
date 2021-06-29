@@ -200,10 +200,13 @@ option = {
             },
             data: (function (){
                 return Object.keys(data).map((key, index) => {
-                    return {
+                    const obj = {
                         value: data[key].first,
                         name: key,
-                        areaStyle: key === 'aggregation' ? {
+                    }
+                    return (key === 'aggregation') ? { 
+                        ...obj,
+                        areaStyle : {
                             color: new echarts.graphic.RadialGradient(0, 1, 1, [
                                 {
                                     color: 'rgba(255, 145, 124, 1)',
@@ -214,19 +217,7 @@ option = {
                                     offset: 1
                                 }
                             ])
-                        } : {
-                            color: new echarts.graphic.RadialGradient(0.0, 0.0, 1, [
-                                {
-                                    color: 'rgba(255, 255, 255, 1)',
-                                    offset: 0
-                                },
-                                {
-                                    color: 'rgba(255, 255, 255, 1)',
-                                    offset: 1
-                                }
-                            ])
-                        },
-                    };
+                    }} : obj;
                 });
             })(),
         }, 
@@ -241,10 +232,13 @@ option = {
             },
             data: (function (){
                 return Object.keys(data).map((key, index) => {
-                    return {
-                        value: data[key].second,
+                    const obj = {
+                        value: data[key].first,
                         name: key,
-                        areaStyle: key === 'aggregation' ? {
+                    }
+                    return (key === 'aggregation') ? { 
+                        ...obj,
+                        areaStyle : {
                             color: new echarts.graphic.RadialGradient(0, 1, 1, [
                                 {
                                     color: 'rgba(255, 145, 124, 1)',
@@ -255,19 +249,7 @@ option = {
                                     offset: 1
                                 }
                             ])
-                        } : {
-                            color: new echarts.graphic.RadialGradient(0.0, 0.0, 1, [
-                                {
-                                    color: 'rgba(255, 255, 255, 1)',
-                                    offset: 0
-                                },
-                                {
-                                    color: 'rgba(255, 255, 255, 1)',
-                                    offset: 1
-                                }
-                            ])
-                        },
-                    };
+                    }} : obj;
                 });
             })(),
         }
