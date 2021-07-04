@@ -83,3 +83,54 @@ export const STRENGTH_DATA = {
     second: [11.175, 30.45, 17.6, 14.95, 18.85, 21.775, 16.675, 26.725],
   },
 };
+
+export const MOVING_MOTIVATOR_DATA = {
+  Aaron: {
+    first: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    second: [2, 3, 1, 5, 4, 9, 8, 7, 6, 10],
+  },
+  Carole: {
+    first: [],
+    second: [],
+  },
+  Charles: {
+    first: [],
+    second: [],
+  },
+  Flynn: {
+    first: [],
+    second: [],
+  },
+  Gavin: {
+    first: [],
+    second: [],
+  },
+  Ian: {
+    first: [5, 2, 10, 4, 1, 6, 9, 8, 7, 3],
+    second: [10, 5, 1, 3, 4, 6, 9, 7, 8, 2],
+  },
+  Jason: {
+    first: [],
+    second: [],
+  },
+  Masha: {
+    first: [],
+    second: [],
+  },
+  Oliver: {
+    first: [],
+    second: [],
+  },
+  Peter: {
+    first: [],
+    second: [],
+  },
+  Sonny: {
+    first: [],
+    second: [],
+  },
+  Theo: {
+    first: [],
+    second: [],
+  },
+};

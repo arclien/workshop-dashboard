@@ -4,9 +4,9 @@ import StrengthRawChart from 'components/StrengthRawChart/StrengthRawChart';
 import StrengthAggregationChart from 'components/StrengthAggregationChart/StrengthAggregationChart';
 import { ChartDataContext } from 'context/ChartDataContext';
 
-import { Container, Row } from './Dashboard.styles';
+import { Container, Row } from './Strength.styles';
 
-const Dashboard = () => {
+const Strength = () => {
   const {
     state: { strengthData, strengthMinData, strengthMaxData },
   } = useContext(ChartDataContext);
@@ -36,4 +36,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Strength;
