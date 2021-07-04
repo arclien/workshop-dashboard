@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import React, { useEffect, useState, useCallback } from 'react';
 import ReactEcharts from 'echarts-for-react';
 

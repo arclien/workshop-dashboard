@@ -4,6 +4,7 @@ const root = {
   description: 'Dashboard Page',
 };
 
+// eslint-disable-next-line
 export default {
   root,
 };
