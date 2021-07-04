@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import React, { useEffect, useState } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts';
@@ -130,7 +131,7 @@ const StrengthAggregationChart = ({
       legend: {
         data: (function () {
           return [
-            ...Object.keys(chartData).map((key, index) => {
+            ...Object.keys(chartData).map((key) => {
               return key;
             }),
             'max',
@@ -149,7 +150,7 @@ const StrengthAggregationChart = ({
           },
           data: (function () {
             return [
-              ...Object.keys(chartData).map((key, index) => {
+              ...Object.keys(chartData).map((key) => {
                 const obj = {
                   value: chartData[key].first,
                   name: key,
@@ -218,7 +219,7 @@ const StrengthAggregationChart = ({
           },
           data: (function () {
             return [
-              ...Object.keys(chartData).map((key, index) => {
+              ...Object.keys(chartData).map((key) => {
                 const obj = {
                   value: chartData[key].second,
                   name: key,
