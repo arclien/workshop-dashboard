@@ -70,16 +70,21 @@ const ChartDataProvider = ({ children }) => {
     setMovingMotivatorMaxData(maxData);
 
     const existCount = Object.keys(data)
+      .filter((key) => key !== 'Team')
       .map((key) => data[key].first)
       .filter((el) => el.length > 0).length;
 
     data.aggregation = {
-      first: sumArray(Object.keys(data).map((key) => data[key].first)).map(
-        (el) => Math.floor(el / existCount)
-      ),
-      second: sumArray(Object.keys(data).map((key) => data[key].second)).map(
-        (el) => Math.floor(el / existCount)
-      ),
+      first: sumArray(
+        Object.keys(data)
+          .filter((key) => key !== 'Team')
+          .map((key) => data[key].first)
+      ).map((el) => Math.floor(el / existCount)),
+      second: sumArray(
+        Object.keys(data)
+          .filter((key) => key !== 'Team')
+          .map((key) => data[key].second)
+      ).map((el) => Math.floor(el / existCount)),
     };
 
     setMovingMotivatorData(data);

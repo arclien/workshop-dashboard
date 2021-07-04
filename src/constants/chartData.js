@@ -159,10 +159,12 @@ export const STRENGTH_SUMMARY_DATA = [
   ],
 ];
 
+// 호기심  명예  인정  숙련  권한  자유  동료들  규칙  목표  지위
+
 export const MOVING_MOTIVATOR_DATA = {
   Aaron: {
-    first: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    second: [2, 3, 1, 5, 4, 9, 8, 7, 6, 10],
+    first: [2, 5, 8, 3, 4, 9, 6, 7, 10, 1],
+    second: [],
   },
   Carole: {
     first: [],
@@ -181,8 +183,8 @@ export const MOVING_MOTIVATOR_DATA = {
     second: [],
   },
   Ian: {
-    first: [5, 2, 10, 4, 1, 6, 9, 8, 7, 3],
-    second: [10, 5, 1, 3, 4, 6, 9, 7, 8, 2],
+    first: [],
+    second: [],
   },
   Jason: {
     first: [],
@@ -205,6 +207,10 @@ export const MOVING_MOTIVATOR_DATA = {
     second: [],
   },
   Theo: {
+    first: [],
+    second: [],
+  },
+  Team: {
     first: [],
     second: [],
   },
