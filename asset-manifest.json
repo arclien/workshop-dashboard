@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/workshop-dashboard/static/css/main.4151fec3.chunk.css",
-    "main.js": "/workshop-dashboard/static/js/main.22710a14.chunk.js",
+    "main.js": "/workshop-dashboard/static/js/main.4f3640a8.chunk.js",
     "runtime-main.js": "/workshop-dashboard/static/js/runtime-main.25cd886d.js",
     "static/js/2.ce744839.chunk.js": "/workshop-dashboard/static/js/2.ce744839.chunk.js",
     "index.html": "/workshop-dashboard/index.html",
@@ -11,6 +11,6 @@
     "static/js/runtime-main.25cd886d.js",
     "static/js/2.ce744839.chunk.js",
     "static/css/main.4151fec3.chunk.css",
-    "static/js/main.22710a14.chunk.js"
+    "static/js/main.4f3640a8.chunk.js"
   ]
 }
