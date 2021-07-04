@@ -34,8 +34,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:test": "cp ./.env.test ./.env &&react-scripts start",
-    "build:test": "cp ./.env.test ./.env &&react-scripts build",
+    "start:test": "react-scripts start",
+    "build:test": "react-scripts build",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "run:lint": "eslint . --fix --ext .js,.jsx",
     "run:prettier": "prettier -c src/",
