@@ -84,6 +84,81 @@ export const STRENGTH_DATA = {
   },
 };
 
+export const STRENGTH_SUMMARY_DATA = [
+  [
+    {
+      title: '동기부여형 영향자',
+      name: 'Aaron',
+    },
+    {
+      title: '완성형 관리자',
+      name: 'Carole, Charles, Theo',
+    },
+    {
+      title: '완성형 실행자',
+      name: 'Ian, Masha',
+    },
+    {
+      title: '창조형 설계자',
+      name: 'Flynn',
+    },
+    {
+      title: '창조형 실행자',
+      name: 'Gavin',
+    },
+    {
+      title: '창조형 관리자',
+      name: 'Oliver',
+    },
+    {
+      title: '창조형 혁신자',
+      name: 'Peter',
+    },
+    {
+      title: '평가형 분석자',
+      name: 'Jason',
+    },
+    {
+      title: '평가형 연구자',
+      name: 'Sonny, Tom',
+    },
+  ],
+  [
+    {
+      title: '외교',
+      name: 'None',
+    },
+    {
+      title: '동기부여',
+      name: 'Aaron, Carole',
+    },
+    {
+      title: '창조',
+      name: 'Flynn, Gavin, Oliver, Peter',
+    },
+    {
+      title: '탐구',
+      name: 'Flynn',
+    },
+    {
+      title: '평가',
+      name: 'Charles, Ian, Jason, Sonny, Tom',
+    },
+    {
+      title: '조정',
+      name: 'Oliver, Theo',
+    },
+    {
+      title: '완성',
+      name: 'Carole, Charles, Ian, Jason, Masha, Peter, Sonny, Theo, Tom',
+    },
+    {
+      title: '추진',
+      name: 'Aaron, Gavin, Masha',
+    },
+  ],
+];
+
 export const MOVING_MOTIVATOR_DATA = {
   Aaron: {
     first: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],

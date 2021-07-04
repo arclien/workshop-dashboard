@@ -2,13 +2,19 @@ import React, { useEffect, useState, useContext } from 'react';
 
 import StrengthRawChart from 'components/StrengthRawChart/StrengthRawChart';
 import StrengthAggregationChart from 'components/StrengthAggregationChart/StrengthAggregationChart';
+import StrengthSummaryTable from 'components/StrengthSummaryTable/StrengthSummaryTable';
 import { ChartDataContext } from 'context/ChartDataContext';
 
 import { Container, Row } from './Strength.styles';
 
 const Strength = () => {
   const {
-    state: { strengthData, strengthMinData, strengthMaxData },
+    state: {
+      strengthData,
+      strengthMinData,
+      strengthMaxData,
+      strengthSummaryData,
+    },
   } = useContext(ChartDataContext);
   const [isLoaded, setLoaded] = useState(false);
 
@@ -29,6 +35,9 @@ const Strength = () => {
               strengthMinData={strengthMinData}
               strengthMaxData={strengthMaxData}
             />
+          </Row>
+          <Row>
+            <StrengthSummaryTable summaryData={strengthSummaryData} />
           </Row>
         </>
       )}

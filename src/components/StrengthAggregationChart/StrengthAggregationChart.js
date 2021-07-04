@@ -24,7 +24,7 @@ const defaultOption = {
     },
     {
       subtext: '강점 정리',
-      left: '20%',
+      left: '75%',
       top: '85%',
       textAlign: 'center',
     },
@@ -109,7 +109,7 @@ const defaultOption = {
       },
       startAngle: 115,
       radius: 150,
-      center: ['20%', '70%'],
+      center: ['75%', '70%'],
     },
   ],
 };

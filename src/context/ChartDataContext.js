@@ -1,6 +1,10 @@
 import React, { useState, createContext, useEffect } from 'react';
 
-import { STRENGTH_DATA, MOVING_MOTIVATOR_DATA } from '../constants/chartData';
+import {
+  STRENGTH_DATA,
+  STRENGTH_SUMMARY_DATA,
+  MOVING_MOTIVATOR_DATA,
+} from '../constants/chartData';
 import { sumArray, maxArray, minArray } from '../utils/utils';
 
 const Context = createContext();
@@ -14,6 +18,7 @@ const ChartDataProvider = ({ children }) => {
   const [strengthData, setStrengthData] = useState([]);
   const [strengthMinData, setStrengthMinData] = useState([]);
   const [strengthMaxData, setStrengthMaxData] = useState([]);
+  const [strengthSummaryData, setStrengthSummaryData] = useState([]);
 
   useEffect(() => {
     const data = { ...STRENGTH_DATA };
@@ -45,6 +50,7 @@ const ChartDataProvider = ({ children }) => {
     };
 
     setStrengthData(data);
+    setStrengthSummaryData(STRENGTH_SUMMARY_DATA);
   }, []);
 
   useEffect(() => {
@@ -89,6 +95,7 @@ const ChartDataProvider = ({ children }) => {
           strengthData,
           strengthMinData,
           strengthMaxData,
+          strengthSummaryData,
         },
         actions: {},
       }}
