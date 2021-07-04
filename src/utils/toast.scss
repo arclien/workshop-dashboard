@@ -1,0 +1,30 @@
+.Toastify__toast-container--top-center {
+  top: 0px !important;
+  margin-left: 0px !important;
+  transform: translateX(-50%) !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .NoMadToastError {
+    width: 100%;
+    margin: 0 auto;
+
+    background-color: #c0c0c0;
+    border-top: 10px solid #0600a0;
+    border-radius: 0;
+    color: #35362b;
+  }
+
+  .Toastify__toast-container--top-center {
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    transform: translateX(0%) !important;
+  }
+
+  .Toastify__close-button {
+    width: 10px;
+    height: 10px;
+    color: #151515;
+  }
+}
